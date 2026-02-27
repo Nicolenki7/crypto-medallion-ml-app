@@ -1,12 +1,32 @@
+"""
+Crypto Analytics & ML Predictor
+================================
+Medallion Architecture | Linear Regression | Interactive Dashboard
+
+Author: Nicolas Zalazar
+Date: 2026-02-28
+"""
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, mean_absolute_error
+from typing import Tuple, Optional
+import logging
 
-# Configuración de la página nivel Senior
-st.set_page_config(page_title="Crypto Predictive Analytics", layout="wide")
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Page configuration
+st.set_page_config(
+    page_title="Crypto Predictive Analytics | Nicolas Zalazar",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 st.title("🚀 Crypto ML: Predicción de Precios y Volatilidad")
 st.markdown("---")
