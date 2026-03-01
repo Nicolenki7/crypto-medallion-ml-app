@@ -1,21 +1,41 @@
-# 🚀 Crypto Analytics & ML Predictor
+# 🚀 Crypto Medallion ML App
 
-**Medallion Architecture | Machine Learning | Interactive Dashboard**
+**Medallion Architecture for DeFi | Machine Learning Price Prediction | Interactive Streamlit Dashboard**
 
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit)](https://streamlit.io/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikit-learn)](https://scikit-learn.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
 ## 📋 Overview
 
-This application demonstrates a complete **Medallion Architecture** implementation for cryptocurrency data processing, featuring:
+Complete **Medallion Architecture** implementation for cryptocurrency analytics, featuring gold-layer data processing, machine learning price prediction, and an interactive Streamlit dashboard for real-time analysis.
 
-- **Gold Layer Data**: Cleaned, aggregated, and business-ready datasets
-- **Machine Learning**: Linear Regression model for price prediction
-- **Interactive Dashboard**: Real-time predictions with Streamlit + Plotly
-- **Production-Ready**: Error handling, caching, and responsive UI
+This project demonstrates production-ready data engineering patterns for DeFi analytics with clear separation between raw, cleaned, and business-ready data layers.
+
+---
+
+## 💼 Business Impact
+
+- **Signal-vs-Noise Analysis**: Filters market volatility to identify actionable price trends
+- **Volume-Backed Validation**: Correlates price predictions with trading volume patterns
+- **What-If Scenario Planning**: Interactive parameter adjustment for investment decision support
+- **Production-Ready ML**: R² ~0.98 accuracy on Bitcoin price predictions
+
+---
+
+## 🛠️ Technical Stack
+
+| Category | Technologies |
+| :--- | :--- |
+| **Frontend** | Streamlit |
+| **Data Processing** | Pandas, NumPy |
+| **Machine Learning** | scikit-learn (Linear Regression) |
+| **Visualization** | Plotly |
+| **Data Architecture** | Medallion (Bronze/Silver/Gold) |
+| **Deployment** | Streamlit Cloud |
 
 ---
 
@@ -47,51 +67,30 @@ This application demonstrates a complete **Medallion Architecture** implementati
 
 ---
 
-## 🎯 Features
+## 🚀 Key Features
 
 ### Machine Learning Model
 - **Algorithm**: Linear Regression (scikit-learn)
-- **Features**: 
-  - Opening price (monthly)
-  - Average volatility
-  - Average volume
+- **Features**: Opening price, average volatility, average volume
 - **Target**: Month-end closing price
-- **Metrics**: R² Score, MAE (Mean Absolute Error)
+- **Performance**: R² ~0.98 (Bitcoin), MAE tracked per asset
 
 ### Interactive Dashboard
-- **Asset Selection**: Choose from multiple cryptocurrencies
-- **Input Simulation**: Adjust parameters for "what-if" analysis
-- **Visualizations**: 
-  - Regression scatter plot
-  - Historical data table
-  - Performance metrics
+- **Multi-Asset Support**: BTC, ETH, and major cryptocurrencies
+- **Parameter Simulation**: Adjust inputs for scenario analysis
+- **Visual Analytics**: Regression plots, historical tables, metrics
+- **Production Features**: Error handling, caching, responsive UI
 
 ---
 
-## 🚀 Quick Start
+## 📊 Results & Metrics
 
-### Prerequisites
-- Python 3.9+
-- pip package manager
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/Nicolenki7/crypto-medallion-ml-app.git
-cd crypto-medallion-ml-app
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Run the Application
-
-```bash
-streamlit run app.py
-```
-
-The dashboard will open in your browser at `http://localhost:8501`
+| Metric | Value |
+| :--- | :--- |
+| **R² Score (BTC)** | ~0.98 |
+| **Feature Importance** | Price Start > Volume > Volatility |
+| **Data Granularity** | Monthly aggregated metrics |
+| **Assets Supported** | Multiple cryptocurrencies |
 
 ---
 
@@ -102,32 +101,30 @@ crypto-medallion-ml-app/
 ├── app.py                      # Main Streamlit application
 ├── gold_data.csv               # Gold layer dataset (aggregated features)
 ├── requirements.txt            # Python dependencies
-└── README.md                   # This file
+└── README.md                   # Project documentation
 ```
 
 ---
 
-## 📊 Data Pipeline
+## 🔧 Setup & Installation
 
-### Gold Layer Features
+```bash
+# Clone the repository
+git clone https://github.com/Nicolenki7/crypto-medallion-ml-app.git
+cd crypto-medallion-ml-app
 
-| Feature | Description | Type |
-|---------|-------------|------|
-| `Nombre_Moneda` | Cryptocurrency name | String |
-| `Precio_Inicio_Mes` | Month opening price (USD) | Float |
-| `Precio_Fin_Mes` | Month closing price (USD) | Float |
-| `Volatilidad_Media_Mensual` | Average monthly volatility (%) | Float |
-| `Volumen_Promedio_Mensual` | Average monthly volume | Float |
+# Install dependencies
+pip install -r requirements.txt
 
-### Model Performance
+# Run the application
+streamlit run app.py
+```
 
-- **R² Score**: ~0.98 (Bitcoin)
-- **Mean Absolute Error**: Varies by asset
-- **Features Importance**: Price start > Volume > Volatility
+The dashboard will open at `http://localhost:8501`
 
 ---
 
-## 🎨 Usage Guide
+## 📈 Usage
 
 ### 1. Select Cryptocurrency
 Use the sidebar dropdown to choose your target asset (BTC, ETH, etc.)
@@ -144,74 +141,51 @@ Use the sidebar dropdown to choose your target asset (BTC, ETH, etc.)
 
 ---
 
+## 🎯 Key Learnings
+
+- **Medallion Architecture** provides clear data quality boundaries
+- **Feature engineering** (volatility, volume) improves prediction accuracy
+- **Interactive dashboards** enable business users to explore ML outputs
+- **Gold-layer aggregation** reduces noise for trend analysis
+
+---
+
 ## 🔮 Future Enhancements
 
 - [ ] Multi-model comparison (XGBoost, Random Forest, LSTM)
 - [ ] Real-time data ingestion from crypto APIs
-- [ ] Feature engineering (technical indicators, sentiment)
-- [ ] Model retraining pipeline (MLflow integration)
+- [ ] Technical indicators (RSI, MACD, Bollinger Bands)
+- [ ] MLflow integration for model tracking
 - [ ] Backtesting framework
 - [ ] Alert system for price predictions
 
 ---
 
-## 🛠️ Tech Stack
+## 🔗 Links
 
-| Component | Technology |
-|-----------|------------|
-| **Frontend** | Streamlit |
-| **Data Processing** | Pandas, NumPy |
-| **Machine Learning** | scikit-learn |
-| **Visualization** | Plotly |
-| **Deployment** | Streamlit Cloud |
+| Resource | URL |
+| :--- | :--- |
+| **Repository** | https://github.com/Nicolenki7/crypto-medallion-ml-app |
+| **Live Demo** | (Deploy on Streamlit Cloud) |
+| **Related Project** | [Crypto Medallion Analytics](https://github.com/Nicolenki7/Crypto_Medallion_Analytics) |
 
 ---
 
-## 📝 Data Engineering Best Practices
-
-### 1. Medallion Architecture
-- Clear separation between raw, cleaned, and business-ready data
-- Each layer has specific quality standards and transformations
-
-### 2. Feature Engineering
-- Domain-specific features (volatility, volume patterns)
-- Aggregation at appropriate time granularity (monthly)
-
-### 3. Model Validation
-- R² score for goodness of fit
-- MAE for practical error interpretation
-- Train/test split for generalization assessment
-
-### 4. Code Quality
-- Type hints and docstrings
-- Error handling for production robustness
-- Caching for performance optimization
-
----
-
-## 👨‍💻 Author
-
-**Nicolas Zalazar**  
-*Senior Data Engineer | Microsoft Fabric & Snowflake Specialist*
-
-- 📧 zalazarn046@gmail.com
-- 🔗 [LinkedIn](https://www.linkedin.com/in/nicolas-zalazar-63340923a)
-- 🐙 [GitHub](https://github.com/Nicolenki7)
-- 📊 [Kaggle](https://www.kaggle.com/nicolaszalazar73)
-
-### Core Competencies
-- **Data Engineering**: ETL/ELT, Medallion Architecture, Data Modeling
-- **Cloud Platforms**: Microsoft Fabric, Snowflake, Databricks, AWS
-- **Machine Learning**: Predictive Modeling, Feature Engineering, scikit-learn
-- **Programming**: Python (Pandas, PySpark), SQL (Advanced)
-- **BI & Visualization**: Power BI, Tableau, Streamlit, Plotly
-
----
-
-## 📄 License
+## 📝 License
 
 MIT License — Feel free to fork, modify, and use for personal or commercial projects.
 
 ---
 
-*Last Updated: February 2026*
+## 👤 Author
+
+**Nicolás Zalazar** | Senior Data Engineer & Microsoft Fabric Specialist
+
+- GitHub: [@Nicolenki7](https://github.com/Nicolenki7)
+- LinkedIn: [nicolas-zalazar-63340923a](https://www.linkedin.com/in/nicolas-zalazar-63340923a)
+- Portfolio: [nicolenki7.github.io/Portfolio](https://nicolenki7.github.io/Portfolio/)
+- Email: zalazarn046@gmail.com
+
+---
+
+*Last Updated: March 2026*
